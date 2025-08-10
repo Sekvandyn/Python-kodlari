@@ -2,7 +2,11 @@ import tkinter as tk
 import random
 import threading
 import winsound
-
+###
+#    adam asmaca oyunu aşşağıdaki kelime havuzundan seçilen katagoriden rastgele bir örneği bulmanı ister 
+#    kolay ve zor durumunu da 6 karakter ile sınırlandırdım yani 6 karakterden az olan kelimeler kolay sınıfında diğerleri 
+#    zor sınıfına dahil olur bunu kendi iradenize göre koddan değiştirebilirsiniz 
+###
 kelimeler = {
     "Hayvan": [
         "kedi", "köpek", "aslan", "kaplan", "tavşan", "zürafa", "penguen", "kartal", "tilki", "ayı",
@@ -170,3 +174,4 @@ if __name__ == "__main__":
     root = tk.Tk()
     oyun = AdamAsmaca(root)
     root.mainloop()
+
