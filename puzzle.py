@@ -1,10 +1,12 @@
+# puzzle oyunu ile yüklediğiniz fotoğraf istediğiniz sayıda parçaya bölünüp karıştırılır ve parçalar tekrar doğru yere gelip kontrol et tuşuna basıldığında sana sonucu gösyterir
+
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from PIL import Image, ImageTk
 import random
 import time
 
-# Zorluk seviyeleri ve grid boyutları
+
 DIFFICULTY_LEVELS = {
     "Kolay (2x2)": 2,
     "Orta (3x3)": 3,
@@ -44,15 +46,15 @@ class PuzzleApp(tk.Tk):
         self.move_count = 0
         self.puzzle_size = None
 
-        # Süre ve hamle sayacı
+        
         self.info_label = tk.Label(self, text="Süre: 00:00 | Hamle: 0", font=("Arial", 12))
         self.info_label.pack(pady=5)
 
-        # Görsel yükleme butonu
+        
         self.load_button = tk.Button(self, text="Görsel Yükle", command=self.load_image)
         self.load_button.pack(pady=10)
 
-        # Puzzle alanı
+       
         self.frame = tk.Frame(self, width=300, height=300, bg="lightgray")
         self.frame.pack()
 
@@ -83,17 +85,17 @@ class PuzzleApp(tk.Tk):
 
         img = Image.open(self.image_path).resize((300, 300))
 
-        # Zorluk ve başla butonlarını kaldır
+       
         self.difficulty_menu.destroy()
         self.start_button.destroy()
 
         self.create_puzzle(img)
 
-        # Kontrol butonu
+    
         self.check_button = tk.Button(self, text="Kontrol Et", command=self.check_solution)
         self.check_button.pack(pady=10)
 
-        # Süreyi başlat
+      
         self.start_time = time.time()
         self.update_timer()
 
@@ -165,3 +167,4 @@ class PuzzleApp(tk.Tk):
 if __name__ == "__main__":
     app = PuzzleApp()
     app.mainloop()
+
